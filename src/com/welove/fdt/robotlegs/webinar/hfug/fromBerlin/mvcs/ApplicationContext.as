@@ -4,6 +4,7 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs {
 	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.events.RSSSerivceEvent;
 	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.models.RSSModel;
 	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.services.RSSSerivce;
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.views.ItemView;
 
 	import org.robotlegs.base.ContextEvent;
 	import org.robotlegs.mvcs.Context;
@@ -14,6 +15,7 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs {
 	 * @author Francis Varga
 	 */
 	public class ApplicationContext extends Context {
+		
 		public function ApplicationContext(contextView : DisplayObjectContainer = null, autoStartup : Boolean = true) {
 			super(contextView, autoStartup);
 		}
@@ -21,8 +23,12 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs {
 		override public function startup() : void {
 			commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, InitialCommand, ContextEvent);
 			commandMap.mapEvent(RSSSerivceEvent.LOAD_COMPLETE, RSSServiceCommand, RSSSerivceEvent);
+			
 			injector.mapSingleton(RSSSerivce);
 			injector.mapSingleton(RSSModel);
+			
+			contextView.addChild(new ItemView());
+			
 			super.startup();
 		}
 	}
