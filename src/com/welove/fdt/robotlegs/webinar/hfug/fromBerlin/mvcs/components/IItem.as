@@ -1,4 +1,4 @@
-package components {
+package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.components {
 	/**
 	 * @author Marvin
 	 */

@@ -9,7 +9,6 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.interfaces {
 		function set link(value : String):void
 		function set pubDate(value : String):void
 		function set author(value : String):void
-		
 		function get id():uint
 		function get title():String
 		function get description():String
