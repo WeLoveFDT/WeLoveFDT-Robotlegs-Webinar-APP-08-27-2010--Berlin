@@ -1,6 +1,5 @@
 package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.commands {
-	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.events.RSSSerivceEvent;
-	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.models.RSSModel;
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.services.RSSService;
 
 	import org.robotlegs.mvcs.Command;
 
@@ -10,24 +9,13 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.commands {
 	public class InitialCommand extends Command {
 		
 		[Inject]
-		public var event : RSSSerivceEvent;
-		
-		[Inject]
-		public var model : RSSModel;
+		public var service : RSSService;
 		
 		override public function execute() : void {
 			
-			switch(event.type){
-				case RSSSerivceEvent.LOAD_COMPLETE:
-					var rssList : Array = new Array();
-					_parseFunction(rssList);
-					break;
-				default:
-			}
+			service.loadRSS("http://welovefdt.com/feed.xml");
 			
 		}
 
-		private function _parseFunction(rssList : Array) : void {
-		}
 	}
 }

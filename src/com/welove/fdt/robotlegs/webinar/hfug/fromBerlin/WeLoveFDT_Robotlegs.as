@@ -8,7 +8,10 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin {
 	public class WeLoveFDT_Robotlegs extends Sprite {
 		
 		public function WeLoveFDT_Robotlegs() {
-			new ApplicationContext();
+			trace("++++++++++++++++++++++++++++++");
+			trace("WeLoveFDT_Robotlegs");
+			trace("++++++++++++++++++++++++++++++");
+			new ApplicationContext(this);
 		}
 	}
 }

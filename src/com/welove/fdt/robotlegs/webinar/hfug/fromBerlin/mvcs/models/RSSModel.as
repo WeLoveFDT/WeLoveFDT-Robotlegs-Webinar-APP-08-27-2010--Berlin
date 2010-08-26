@@ -8,7 +8,7 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.models {
 	 */
 	public class RSSModel extends Actor {
 		
-		var items : Vector.<IRSSItem> = new Vector.<IRSSItem>();
+		private var items : Vector.<IRSSItem> = new Vector.<IRSSItem>();
 		
 		public function addItem(item :IRSSItem):void
 		{
