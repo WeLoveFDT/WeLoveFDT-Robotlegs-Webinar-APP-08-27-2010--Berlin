@@ -11,7 +11,7 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.services {
 	/**
 	 * @author Francis Varga
 	 */
-	public class RSSSerivce extends Actor {
+	public class RSSService extends Actor {
 		public function loadRSS(url : String):void {
 			var loader : URLLoader = new URLLoader();
 			loader.addEventListener(Event.COMPLETE, onComplete);
@@ -26,6 +26,7 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.services {
 		}
 
 		private function onIOError(event : IOErrorEvent) : void {
+			trace(event.text);
 		}
 	}
 }
