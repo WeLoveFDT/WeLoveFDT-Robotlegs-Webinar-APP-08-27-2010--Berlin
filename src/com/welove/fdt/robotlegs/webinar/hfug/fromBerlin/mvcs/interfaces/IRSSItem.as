@@ -1,4 +1,4 @@
-package com.welove.fdt.robotlegs.webinar.mvcs.interfaces {
+package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.interfaces {
 	/**
 	 * @author Francis Varga
 	 */

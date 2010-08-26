@@ -1,4 +1,4 @@
-package com.welove.fdt.robotlegs.webinar.mvcs.events {
+package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.events {
 	import flash.events.Event;
 
 	/**

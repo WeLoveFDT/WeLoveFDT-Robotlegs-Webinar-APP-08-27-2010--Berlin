@@ -1,5 +1,6 @@
-package com.welove.fdt.robotlegs.webinar.mvcs.models {
-	import com.welove.fdt.robotlegs.webinar.mvcs.interfaces.IRSSItem;
+package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.models {
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.interfaces.IRSSItem;
+
 	import org.robotlegs.mvcs.Actor;
 
 	/**

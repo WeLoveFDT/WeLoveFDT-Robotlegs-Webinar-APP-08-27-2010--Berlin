@@ -1,9 +1,10 @@
-package com.welove.fdt.robotlegs.webinar.mvcs {
-	import com.welove.fdt.robotlegs.webinar.mvcs.commands.RSSServiceCommand;
-	import com.welove.fdt.robotlegs.webinar.mvcs.events.RSSSerivceEvent;
-	import com.welove.fdt.robotlegs.webinar.mvcs.models.RSSModel;
-	import com.welove.fdt.robotlegs.webinar.mvcs.commands.InitialCommand;
-	import com.welove.fdt.robotlegs.webinar.mvcs.services.RSSSerivce;
+package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs {
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.commands.InitialCommand;
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.commands.RSSServiceCommand;
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.events.RSSSerivceEvent;
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.models.RSSModel;
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.services.RSSSerivce;
+
 	import org.robotlegs.base.ContextEvent;
 	import org.robotlegs.mvcs.Context;
 

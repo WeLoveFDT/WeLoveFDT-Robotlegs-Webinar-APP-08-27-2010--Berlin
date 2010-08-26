@@ -1,5 +1,5 @@
-package com.welove.fdt.robotlegs.webinar.mvcs.services {
-	import com.welove.fdt.robotlegs.webinar.mvcs.events.RSSSerivceEvent;
+package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.services {
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.events.RSSSerivceEvent;
 
 	import org.robotlegs.mvcs.Actor;
 
