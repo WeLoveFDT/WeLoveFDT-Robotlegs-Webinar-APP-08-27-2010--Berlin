@@ -10,17 +10,19 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.components {
 		private var _author:String;
 		private var _pubDate:String;
 		private var _link:String;
-		private var _description : String;
+		private var _description:String;
 
 		public function draw() : void {
-//			_item.titleTF.text = valArr[i];
-//			_item.titleTF.autoSize = TextFieldAutoSize.LEFT;
-//			_item.metaTF.text = "Marvin Blase, 16.08.2010";
-//			_item.metaTF.autoSize = TextFieldAutoSize.LEFT;
+			// _item.titleTF.text = valArr[i];
+			// _item.titleTF.autoSize = TextFieldAutoSize.LEFT;
+			// _item.metaTF.text = "Marvin Blase, 16.08.2010";
+			// _item.metaTF.autoSize = TextFieldAutoSize.LEFT;
+		}
+
+		public function create() : void {
 		}
 
 		public function destroy() : void {
-			
 		}
 
 		public function get id() : uint {
@@ -47,27 +49,27 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.components {
 			return _author;
 		}
 
-		public function set id(value : uint) : void {
+		public function set id(value:uint) : void {
 			_id = value;
 		}
 
-		public function set title(value : String) : void {
+		public function set title(value:String) : void {
 			_title = value;
 		}
 
-		public function set description(value : String) : void {
+		public function set description(value:String) : void {
 			_description = value;
 		}
 
-		public function set link(value : String) : void {
+		public function set link(value:String) : void {
 			_link = value;
 		}
 
-		public function set pubDate(value : String) : void {
+		public function set pubDate(value:String) : void {
 			_pubDate = value;
 		}
 
-		public function set author(value : String) : void {
+		public function set author(value:String) : void {
 			_author = value;
 		}
 	}

@@ -15,8 +15,9 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs {
 	 * @author Francis Varga
 	 */
 	public class ApplicationContext extends Context {
-		
-		public function ApplicationContext(contextView : DisplayObjectContainer = null, autoStartup : Boolean = true) {
+
+		public function ApplicationContext(contextView:DisplayObjectContainer = null, autoStartup:Boolean = true) {
+			_contextView = contextView;
 			super(contextView, autoStartup);
 		}
 
