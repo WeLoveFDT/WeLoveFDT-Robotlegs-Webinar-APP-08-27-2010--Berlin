@@ -12,7 +12,7 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.commands {
 		public var event : RSSSerivceEvent;
 
 		override public function execute() : void {
-			
+			var xmlObj : Object = event.resultData;
 		}
 	}
 }
