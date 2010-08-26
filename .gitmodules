@@ -1,0 +1,3 @@
+[submodule "submodules/robotlegs"]
+	path = submodules/robotlegs
+	url = git://github.com/darscan/robotlegs-framework.git
