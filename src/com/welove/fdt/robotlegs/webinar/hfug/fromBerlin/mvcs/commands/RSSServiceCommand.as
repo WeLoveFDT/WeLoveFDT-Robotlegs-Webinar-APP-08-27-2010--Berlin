@@ -1,6 +1,8 @@
 package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.commands {
-	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.views.MainContainer;
 	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.events.RSSSerivceEvent;
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.models.RSSModel;
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.models.vos.RSSDataItem;
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.views.MainContainer;
 
 	import org.robotlegs.mvcs.Command;
 
@@ -11,6 +13,9 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.commands {
 		
 		[Inject]
 		public var event : RSSSerivceEvent;
+		
+		[Inject]
+		public var model:RSSModel;
 
 		override public function execute() : void {
 			
@@ -19,8 +24,7 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.commands {
 			
 			_parseRSSXML(event.resultData);
 						
-			var mainContainer : MainContainer = new MainContainer();
-			contextView.addChild(mainContainer);
+			
 			
 			dispatch(new RSSSerivceEvent(RSSSerivceEvent.RSS_PARSED));
 			
@@ -28,11 +32,16 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.commands {
 		
 		private function _parseRSSXML(xmlObj : Object):void
 		{
-			trace("_parseRSSXML()");
 			
 			var xmlList : XMLList = new XMLList();
-			xmlList = new XML(xmlObj)["item"];
-			
+			xmlList = new XML(xmlObj)["channel"]["item"];
+			for (var i:int = 0; i < xmlList.length(); i++) {
+				var rssItem:RSSDataItem = new RSSDataItem();
+				var rssData:Object = xmlList[i];
+				rssData.id = i;
+				rssItem.dataProvider = rssData;
+				model.addItem(rssItem);
+			}
 		}
 	}
 }

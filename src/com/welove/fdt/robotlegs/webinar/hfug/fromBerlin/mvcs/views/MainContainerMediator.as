@@ -19,6 +19,7 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.views {
 		}
 
 		private function onRSSParsed(event : RSSSerivceEvent) : void {
+			
 		}
 		
 	}

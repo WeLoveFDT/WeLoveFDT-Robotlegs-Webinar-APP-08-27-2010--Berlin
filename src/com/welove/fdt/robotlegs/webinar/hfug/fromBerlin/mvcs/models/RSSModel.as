@@ -14,5 +14,14 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.models {
 		{
 			items.push(item);
 		}
+		
+		public function get length():uint {
+			return items.length;
+		}
+		
+		public function getItemAt(index : uint):IRSSItem
+		{
+			return items[index];
+		}
 	}
 }

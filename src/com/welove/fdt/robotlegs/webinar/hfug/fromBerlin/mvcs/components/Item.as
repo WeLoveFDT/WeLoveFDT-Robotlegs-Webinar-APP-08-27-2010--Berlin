@@ -20,6 +20,7 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.components {
 		}
 
 		public function create() : void {
+			
 		}
 
 		public function destroy() : void {

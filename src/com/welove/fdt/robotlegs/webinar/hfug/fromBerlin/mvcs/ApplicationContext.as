@@ -2,10 +2,12 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs {
 	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.commands.InitialCommand;
 	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.commands.RSSServiceCommand;
 	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.events.RSSSerivceEvent;
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.interfaces.IRSSItem;
 	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.models.RSSModel;
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.models.vos.RSSDataItem;
 	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.services.RSSService;
-	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.views.MainContainer;
-	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.views.MainContainerMediator;
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.views.ItemView;
+	import com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.views.ItemViewMediator;
 
 	import org.robotlegs.base.ContextEvent;
 	import org.robotlegs.mvcs.Context;
@@ -29,10 +31,14 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs {
 			commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, InitialCommand, ContextEvent);
 			commandMap.mapEvent(RSSSerivceEvent.LOAD_COMPLETE, RSSServiceCommand, RSSSerivceEvent);
 			
-			mediatorMap.mapView(MainContainer, MainContainerMediator);
+			mediatorMap.mapView(ItemView, ItemViewMediator);
 			
 			injector.mapSingleton(RSSService);
+			injector.mapClass(IRSSItem, RSSDataItem);
 			injector.mapSingleton(RSSModel);
+			injector.mapSingleton(ItemView);
+			
+			contextView.addChild(new ItemView());
 			
 			super.startup();
 		}

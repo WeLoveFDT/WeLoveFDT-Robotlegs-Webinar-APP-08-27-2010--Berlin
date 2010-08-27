@@ -7,15 +7,11 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.commands {
 	 * @author Francis Varga
 	 */
 	public class InitialCommand extends Command {
-		
 		[Inject]
-		public var service : RSSService;
-		
-		override public function execute() : void {
-			
-			service.loadRSS("http://welovefdt.com/feed.xml");
-			
-		}
+		public var service:RSSService;
 
+		override public function execute() : void {
+			service.loadRSS("http://welovefdt.com/feed.xml");
+		}
 	}
 }

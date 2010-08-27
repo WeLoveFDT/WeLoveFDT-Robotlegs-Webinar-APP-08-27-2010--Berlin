@@ -20,7 +20,8 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.services {
 		}
 
 		private function onComplete(event : Event) : void {
-			var newEvent : RSSSerivceEvent = new RSSSerivceEvent(RSSSerivceEvent.LOAD_COMPLETE);
+			trace('event: ' + (event));
+			var newEvent:RSSSerivceEvent = new RSSSerivceEvent(RSSSerivceEvent.LOAD_COMPLETE);
 			newEvent.resultData = event.target["data"];
 			dispatch(newEvent);
 		}
