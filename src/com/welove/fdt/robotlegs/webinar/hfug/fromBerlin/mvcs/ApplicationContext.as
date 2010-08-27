@@ -34,7 +34,6 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs {
 			mediatorMap.mapView(ItemView, ItemViewMediator);
 			
 			injector.mapSingleton(RSSService);
-			injector.mapClass(IRSSItem, RSSDataItem);
 			injector.mapSingleton(RSSModel);
 			injector.mapSingleton(ItemView);
 			

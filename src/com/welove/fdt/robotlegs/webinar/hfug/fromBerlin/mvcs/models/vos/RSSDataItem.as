@@ -7,6 +7,7 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.models.vos {
 	public class RSSDataItem implements IRSSItem {
 		
 		
+		
 		private var _dataProvider : Object = new Object();
 		
 		public function set dataProvider(value:Object):void {
