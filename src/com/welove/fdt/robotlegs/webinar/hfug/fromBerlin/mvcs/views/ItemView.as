@@ -95,6 +95,7 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.views {
 
 		private function onItemClick(event:MouseEvent) : void {
 			trace('event.target.link: ' + (event.target.link));
+			navigateToURL(new URLRequest(event.target.link));
 		}
 	}
 }
