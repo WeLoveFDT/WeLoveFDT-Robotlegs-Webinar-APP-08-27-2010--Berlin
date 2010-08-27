@@ -19,8 +19,7 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.views {
 		private var _passePartou:PassePartouAsset;
 		private var _logoHead:LogoAsset;
 		private var _oldY:int;
-		
-		var leftLimit:int = -500;
+		var leftLimit:int = -300;
 		var rightLimit:int = 0;
 		var thumbWidth:Number = 640;
 		var xRef:Number;
@@ -35,6 +34,9 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.views {
 
 			_itemContainer = new Sprite();
 			addEventListener(Event.ENTER_FRAME, onRender);
+			addEventListener(MouseEvent.ROLL_OVER, onClipRoll);
+			addEventListener(MouseEvent.ROLL_OUT, onClipRoll);
+
 			addChild(_itemContainer);
 
 			_passePartou = new PassePartouAsset();
@@ -48,9 +50,17 @@ package com.welove.fdt.robotlegs.webinar.hfug.fromBerlin.mvcs.views {
 			addChild(_logoHead);
 		}
 
+		private function onClipRoll(event:MouseEvent):void {
+			if(event.type == MouseEvent.ROLL_OVER)
+				addEventListener(Event.ENTER_FRAME, onRender);
+			else
+				removeEventListener(Event.ENTER_FRAME, onRender);
+		}
+
 		private function onRender(event:Event) : void {
-			xRef = stage.mouseY - 320;
-			xConv = (xRef - _itemContainer.y) * -0.01;
+			leftLimit = -_itemContainer.height;
+			xRef = stage.mouseY - 60;
+			xConv = (xRef + _itemContainer.y) * -0.1;
 
 			_itemContainer.y += xConv;
 
